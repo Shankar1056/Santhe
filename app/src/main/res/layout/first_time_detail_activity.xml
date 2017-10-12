@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		android:weightSum="1">
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_weight="0.1"
+			>
+
+			<android.support.v4.view.ViewPager
+				xmlns:android="http://schemas.android.com/apk/res/android"
+				android:id="@+id/viewPager"
+				android:layout_width="fill_parent"
+				android:layout_height="match_parent"
+				>
+
+			</android.support.v4.view.ViewPager>
+
+		</RelativeLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:background="@color/colorGray">
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_weight="0.9"
+			android:orientation="horizontal"
+			android:weightSum="3"
+			>
+
+			<TextView
+				android:id="@+id/tvPrevious"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:gravity="center"
+				android:text="@string/Previous"
+				android:textColor="@color/colorGreen"
+				android:textSize="18sp"
+				android:textStyle="bold"/>
+
+			<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_gravity="center"
+				android:layout_weight="1"
+				android:gravity="center">
+
+				<com.viewpagerindicator.CirclePageIndicator
+					android:id="@+id/indicator"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_centerHorizontal="true"
+					android:layout_centerVertical="true"
+					android:background="#00000000"
+					app:fillColor="@color/colorGreen"
+					app:pageColor="#cccccc"
+					app:radius="4dp"
+					app:strokeColor="#00000000"/>
+			</RelativeLayout>
+
+			<TextView
+				android:id="@+id/tvNext"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:gravity="center"
+				android:text="@string/Next"
+				android:textColor="@color/colorGreen"
+				android:textSize="18sp"
+				android:textStyle="bold"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.uitablettwo.MainActivity">
+
+    <group>
+        <item
+            android:id="@+id/menu_Edit"
+            android:title="Edit" />
+        <item
+            android:id="@+id/menu_Delete"
+            android:title="Delete" />
+    </group>
+
+</menu>

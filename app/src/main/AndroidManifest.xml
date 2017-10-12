@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="bigappcompany.com.santhe">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA"></uses-permission>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!--<uses-permission android:name="android.permission.READ_SMS" />-->
+    <!--<uses-permission android:name="android.permission.SEND_SMS"></uses-permission>-->
+    <!--<uses-permission android:name="android.permission.RECEIVE_SMS" />-->
+
+    <uses-permission android:name="INTERNET" />
+    <uses-permission android:name="ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/santhelogo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/santhelogoround"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+
+        <activity
+            android:name=".activity.SplashScreenActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.VerifyOtpActivity"></activity>
+        <activity android:name=".activity.RegistrationActivity" />
+        <activity android:name=".activity.MobileActivity" />
+
+        <activity android:name=".activity.FirstTimeDetailActivity" />
+        <activity android:name=".activity.PersonaliseActivity" />
+        <activity
+            android:name=".activity.HomeScreenActivity"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity android:name=".activity.AgricultureLocationActivity" />
+        <activity android:name=".activity.DetailsActivity" />
+        <activity android:name=".activity.CommentsActivity" />
+        <activity android:name=".activity.PostActivity" />
+        <activity android:name=".activity.MultipleImageActivity" />
+        <activity android:name=".activity.MapActivity" />
+        <activity android:name=".activity.ReplyActivity" />
+        <activity android:name=".activity.PostEditActivity" />
+        <activity android:name=".activity.EditProductActivity" />
+        <activity android:name=".activity.InstitutionDetailsActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <receiver
+            android:name=".other.SmsReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <!--AIzaSyAWbTQiRME9xZZOSo_RIYkMuURMkxv2uwc-->
+        <!--18:4A:C8:7D:71:E0:2C:7A:6D:90:B9:2A:EB:CF:87:70:B5:71:E0:FE-->
+
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/rvActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorGreen">
+
+        <ImageView
+            android:id="@+id/ivHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:contentDescription="@null"
+            android:src="@drawable/navigation" />
+
+        <RelativeLayout
+            android:id="@+id/rvSearch"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@null"
+                android:src="@drawable/search" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/ivHome"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/SellLocation"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tvLoc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvHeading"
+                android:layout_marginTop="3dp"
+                android:maxLength="25"
+                android:maxLines="1"
+                android:text="@string/Fetching"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@+id/tvLoc"
+                android:contentDescription="@null"
+                android:src="@drawable/white_down_arrow" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rv_click"
+            android:layout_width="130dp"
+            android:layout_height="match_parent" />
+
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="fill_parent"
+        android:layout_height="250dp"
+        android:layout_above="@+id/cvBottom"
+        android:layout_below="@+id/rvActionBar"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        card_view:cardCornerRadius="1dp"
+        card_view:contentPadding="0dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/rvPostItemFor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvPostItemFor"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="@string/Postitem"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="18sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/tvPostItemFor"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorstroke" />
+
+            </RelativeLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/rvPostItemFor">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical">
+
+                    <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="20dp"-->
+                    <!---->
+                    <!--android:orientation="horizontal"-->
+                    <!--&gt;-->
+
+                    <RelativeLayout
+                        android:id="@+id/rvSelectPic"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/backgroung_add"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/ivSelectedPicture"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:contentDescription="@null"
+                            android:scaleType="fitXY" />
+
+                        <ImageView
+                            android:id="@+id/ivSelectPic"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:contentDescription="@null"
+                            android:src="@drawable/add_black" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/ivSelectPic"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:text="@string/AddPhoto"
+                            android:textColor="@color/colorGray"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
+
+
+                    <AutoCompleteTextView
+                        android:id="@+id/autoItemName"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="25dp"
+                        android:background="@drawable/border_for_layout_gray"
+                        android:completionThreshold="1"
+                        android:hint=" Select item name"
+                        android:imeOptions="actionDone"
+                        android:maxLines="1"
+                        android:padding="5dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/etCategory"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/border_for_layout_gray"
+                        android:completionThreshold="1"
+                        android:gravity="center_vertical"
+                        android:hint=" Enter category here"
+                        android:maxLines="1"
+                        android:padding="5dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="17sp" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <Spinner
+                            android:id="@+id/sUnit"
+                            style="@style/SpinnerTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="42dp"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/bg_spinner"
+                            android:gravity="center"
+                            android:spinnerMode="dropdown"
+                            android:textColor="@color/colorText"
+                            android:textColorHint="@color/colorText"
+                            android:textSize="17sp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_weight="0.5">
+
+                            <EditText
+                                android:id="@+id/etPrice"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:background="@color/colorTransparent"
+                                android:hint="@string/enterItem"
+                                android:inputType="number"
+                                android:textColor="@color/colorText"
+                                android:textColorHint="@color/colorText"
+                                android:textSize="17sp" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_below="@+id/etPrice"
+                                android:background="@color/colorstroke" />
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+
+                    <EditText
+                        android:id="@+id/etWeightOfItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@color/colorTransparent"
+                        android:hint="@string/enterWeight"
+                        android:inputType="number"
+                        android:textColor="@color/colorText"
+                        android:textColorHint="@color/colorText"
+                        android:textSize="17sp" />
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/colorstroke" />
+
+                    <android.support.v7.widget.AppCompatCheckBox
+                        android:id="@+id/cbNegotiable"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/Negotiable"
+                        android:textColor="@color/colorText"
+                        app:buttonTint="@color/colorOrange" />
+
+                    <Button
+                        android:id="@+id/btnSell"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@color/colorOrange"
+                        android:text="@string/Post"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+            </ScrollView>
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cvBottom"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorWhite"
+        card_view:cardCornerRadius="2dp"
+        card_view:cardUseCompatPadding="true"
+        card_view:contentPadding="10dp">
+
+        <LinearLayout
+            android:id="@+id/rvBottom"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <RelativeLayout
+                android:id="@+id/rvBuy"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/ivBuy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/deselect_buy" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ivBuy"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:text="@string/Buy"
+                    android:textColor="@color/colorGray"
+                    android:textSize="17sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorGray" />
+
+            <RelativeLayout
+                android:id="@+id/rvSell"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/ivSell"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@null"
+                    android:src="@drawable/sell_select" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ivSell"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:text="@string/Sell"
+                    android:textColor="@color/colorGreen"
+                    android:textSize="17sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorGray">
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rvDiscussion"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/ivDiscussion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/deselect_discussion" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ivDiscussion"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:text="@string/Discussion"
+                    android:textColor="@color/colorGray"
+                    android:textSize="17sp" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+
+</RelativeLayout>
